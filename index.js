@@ -80,6 +80,7 @@ module.exports = function() {
     var embed = !!params.embed
 
     fontgen(fontconf, function(err, res){
+        if(!res) return cb(null, '');
         if(err) cb(err);
         var urls = {};
         for(var i in formats) {
